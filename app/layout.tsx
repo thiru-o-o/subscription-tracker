@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable} h-full antialiased`}>
-      <body className="bg-gray-100 min-h-full flex justify-center">
+      <body className="bg-gray-100 min-h-full flex justify-center" suppressHydrationWarning>
         {/* Mobile-constrained shell */}
         <div className="relative w-full max-w-[400px] min-h-screen bg-gray-50 flex flex-col shadow-2xl">
           {/* Page content — padded at bottom to clear BottomNav */}
