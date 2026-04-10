@@ -144,35 +144,39 @@ export default function DiscoverPage() {
   return (
     <>
       <div className="flex flex-col min-h-full">
-        {/* ── Header ── */}
-        <header className="px-5 pt-12 pb-3 bg-gray-50">
-          <div className="flex items-center gap-2 mb-1">
-            <Sparkles size={14} className="text-indigo-400" />
-            <p className="text-xs font-bold text-indigo-500 uppercase tracking-widest">
-              AI Insights
-            </p>
-          </div>
-          <div className="flex items-end justify-between">
-            <h1 className="text-2xl font-black text-gray-800 leading-tight">
-              Savings Engine
-            </h1>
-            <p className="text-xs text-gray-400 mb-0.5">
-              {allRecommendations.length} insights
-            </p>
-          </div>
-          <p className="text-sm text-gray-500 mt-0.5">
-            Up to{" "}
-            <span className="font-bold text-emerald-600">
-              {formatINR(totalAnnualSavings)}/yr
-            </span>{" "}
-            in identified savings
-          </p>
-        </header>
 
-        {/* ══════════════════════════════════════════════════════════════════
-            HERO — "The One Big Win"
-        ══════════════════════════════════════════════════════════════════ */}
-        <section className="px-5 pb-5">
+        {/* ── Sticky top zone: header + hero card ── */}
+        <div className="sticky top-0 z-20 bg-gray-50 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+
+          {/* Header */}
+          <header className="px-5 pt-12 pb-3">
+            <div className="flex items-center gap-2 mb-1">
+              <Sparkles size={14} className="text-indigo-400" />
+              <p className="text-xs font-bold text-indigo-500 uppercase tracking-widest">
+                AI Insights
+              </p>
+            </div>
+            <div className="flex items-end justify-between">
+              <h1 className="text-2xl font-black text-gray-800 leading-tight">
+                Savings Engine
+              </h1>
+              <p className="text-xs text-gray-400 mb-0.5">
+                {allRecommendations.length} insights
+              </p>
+            </div>
+            <p className="text-sm text-gray-500 mt-0.5">
+              Up to{" "}
+              <span className="font-bold text-emerald-600">
+                {formatINR(totalAnnualSavings)}/yr
+              </span>{" "}
+              in identified savings
+            </p>
+          </header>
+
+          {/* ═══════════════════════════════════════════════════════════════
+              HERO — "The One Big Win"
+          ═══════════════════════════════════════════════════════════════ */}
+          <section className="px-5 pb-5">
           <button
             onClick={() => setSelectedRec(heroRec)}
             className="w-full text-left relative bg-slate-900 rounded-3xl p-5 overflow-hidden shadow-xl active:scale-[0.98] transition-transform"
@@ -243,7 +247,9 @@ export default function DiscoverPage() {
               </div>
             </div>
           </button>
-        </section>
+          </section>
+
+        </div>{/* end sticky top zone */}
 
         {/* ══════════════════════════════════════════════════════════════════
             CAROUSEL 1 — Quick Upgrades (Annual vs Monthly)

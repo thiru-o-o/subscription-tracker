@@ -220,31 +220,34 @@ export default function DashboardPage() {
     <>
       <div className="flex flex-col min-h-full">
 
-        {/* ── Header ── */}
-        <header className="flex items-center justify-between px-5 pt-12 pb-4 bg-gray-50">
-          <div>
-            <p className="text-xs text-gray-400 font-medium tracking-wide uppercase">
-              Good morning
-            </p>
-            <h1 className="text-xl font-bold text-gray-800 leading-tight">
-              Hi there 👋
-            </h1>
-          </div>
-          <div className="flex items-center gap-2">
-            <button className="relative p-2.5 bg-white rounded-full shadow-sm border border-gray-100 text-gray-500">
-              <Bell size={18} />
-              {urgentAlerts.length > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
-              )}
-            </button>
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
-              U
-            </div>
-          </div>
-        </header>
+        {/* ── Sticky top zone: header + hero card ── */}
+        <div className="sticky top-0 z-20 bg-gray-50 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
 
-        {/* ── Spend Hero Card ── */}
-        <section className="px-5 pb-5">
+          {/* Header */}
+          <header className="flex items-center justify-between px-5 pt-12 pb-4">
+            <div>
+              <p className="text-xs text-gray-400 font-medium tracking-wide uppercase">
+                Good morning
+              </p>
+              <h1 className="text-xl font-bold text-gray-800 leading-tight">
+                Hi there 👋
+              </h1>
+            </div>
+            <div className="flex items-center gap-2">
+              <button className="relative p-2.5 bg-white rounded-full shadow-sm border border-gray-100 text-gray-500">
+                <Bell size={18} />
+                {urgentAlerts.length > 0 && (
+                  <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
+                )}
+              </button>
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
+                U
+              </div>
+            </div>
+          </header>
+
+          {/* Spend Hero Card */}
+          <section className="px-5 pb-5">
           <div className="relative bg-gradient-to-br from-indigo-600 via-indigo-500 to-purple-600 rounded-3xl p-5 overflow-hidden shadow-lg">
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-white/10 rounded-full" />
             <div className="absolute -bottom-8 -right-2 w-24 h-24 bg-white/5 rounded-full" />
@@ -278,6 +281,8 @@ export default function DashboardPage() {
             </div>
           </div>
         </section>
+
+        </div>{/* end sticky top zone */}
 
         {/* ── Needs Attention ── */}
         {urgentAlerts.length > 0 && (

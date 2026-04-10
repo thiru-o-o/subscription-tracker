@@ -69,24 +69,27 @@ export default function CancelPage() {
   return (
     <div className="flex flex-col min-h-full">
 
-      {/* ── Page Header ── */}
-      <header className="px-5 pt-12 pb-4 bg-gray-50">
-        <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-1 flex items-center gap-1.5">
-          <Trophy size={12} />
-          Activity &amp; Archive
-        </p>
-        <h1 className="text-2xl font-black text-gray-800 leading-tight">
-          Your Cancel Hub
-        </h1>
-        <p className="text-sm text-gray-500 mt-0.5">
-          Track pending actions and celebrate past wins.
-        </p>
-      </header>
+      {/* ── Sticky top zone: header + hero metric ── */}
+      <div className="sticky top-0 z-20 bg-gray-50 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          ZONE A — Hero Metric
-      ══════════════════════════════════════════════════════════════════════ */}
-      <section className="px-5 pb-4">
+        {/* Page Header */}
+        <header className="px-5 pt-12 pb-4">
+          <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-1 flex items-center gap-1.5">
+            <Trophy size={12} />
+            Activity &amp; Archive
+          </p>
+          <h1 className="text-2xl font-black text-gray-800 leading-tight">
+            Your Cancel Hub
+          </h1>
+          <p className="text-sm text-gray-500 mt-0.5">
+            Track pending actions and celebrate past wins.
+          </p>
+        </header>
+
+        {/* ═══════════════════════════════════════════════════════════════
+            ZONE A — Hero Metric
+        ═══════════════════════════════════════════════════════════════ */}
+        <section className="px-5 pb-4">
         <div className="relative bg-gradient-to-br from-emerald-500 via-green-500 to-teal-600 rounded-3xl p-5 overflow-hidden shadow-lg">
           {/* Decorative circles */}
           <div className="absolute -top-8 -right-8 w-36 h-36 bg-white/10 rounded-full" />
@@ -160,6 +163,8 @@ export default function CancelPage() {
           <TrendingUp size={13} className="text-emerald-500 ml-auto shrink-0" />
         </div>
       </section>
+
+      </div>{/* end sticky top zone */}
 
       {/* ══════════════════════════════════════════════════════════════════════
           ZONE B — Pending Actions (conditional)
